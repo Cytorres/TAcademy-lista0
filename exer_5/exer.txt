@@ -1,0 +1,4 @@
+ Faça um programa que funcione como a fila de um banco. É necessario um menu com 3 opções:
+    a. 1- Adicionar cliente: Recebe um nome e adiciona na lista 
+    b. 2- Atende cliente: Retira da lista o próximo a ser atendido
+    c. 3-Fim 
