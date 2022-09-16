@@ -8,14 +8,16 @@ def soma_numeros(lista_de_numeros: List[int]):
 def multiplica_numeros(lista_de_numeros: List[int]):
     return math.prod(lista_de_numeros)
 
-def numeros_duplicados(lista_de_numeros:List[int]):
+def numeros_duplicados(lista_de_numeros:List[int])->List[int]:
     lista_de_repetidos = []
-    nao_repetidos = [set(lista_de_numeros)]
+    repetidos = set()
     for numero in lista_de_numeros:
-        if numero in nao_repetidos == 2:
+        if numero not in lista_de_repetidos:
             lista_de_repetidos.append(numero)
+        else:
+            repetidos.add(numero)
 
-    return lista_de_repetidos
+    return repetidos
 
 def numeros_impares(lista_de_numeros: List[int])->List[int]:
     numeros_impares = []
