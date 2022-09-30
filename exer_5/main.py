@@ -1,6 +1,14 @@
+from enum import IntEnum
 from typing import List
 from src.application.input import pega_opcao_cliente, pega_nome_cliente
 from src.application.output import mostra_lista_de_clientes, mostra_menu
+
+class OpcaoMenuEnun(IntEnum):
+    ADICIONA_CLIENTE = 1
+    EXCLUI_CLIENTE = 2
+    FIM = 3
+
+
 if __name__ == '__main__':
     #codigo,cliente_novo = menu_cliente()
     #lista_de_clientes = pega_cliente(codigo,cliente_novo)
@@ -10,14 +18,14 @@ if __name__ == '__main__':
         mostra_menu()
         codigo = pega_opcao_cliente()
 
-        if not codigo in (1,2,3):
+        if not codigo in list(OpcaoMenuEnun):
             print('Erro... Digite o código certo.')
             continue
                 
-        if codigo == 1:
+        if codigo == OpcaoMenuEnun.ADICIONA_CLIENTE:
             nome = pega_nome_cliente()
             lista_de_clientes.append(nome)
-        elif codigo == 2:
+        elif codigo == OpcaoMenuEnun.EXCLUI_CLIENTE:
             if (len(lista_de_clientes) == 0):
                 print("Não ha cliente a ser atendido")
             else:
